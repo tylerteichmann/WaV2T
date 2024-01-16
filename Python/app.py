@@ -1,17 +1,17 @@
 # exercise 1: remove the space before each period
-# wage = 20
-# hours = 40
-# w = "Your wage rate is"
-# h = "Your hours worked are"
-# earnings = wage * hours
-# e = "Your earnings are"
-# p = "."
+wage = '20'
+hours = 40
+w = "Your wage rate is"
+h = "Your hours worked are"
+earnings = wage * hours
+e = "Your earnings are"
+p = "."
 
-# print(f"{w} {wage}{p}")
-# print(h, hours, end="")
-# print(p)
-# print(e, earnings, end="")
-# print(p)
+print(f"Your wage rate is " + wage + ".")
+print(h, hours, end="")
+print(p)
+print(e, earnings, end="")
+print(p)
 
 # exercies 2: print the letters A, B, and C on a new line with one statement
 # print("A\nB\nC")
