@@ -18,6 +18,10 @@
     <header>
         <h1>MY WEB PAGE</h1>
         <p>Week 01 Assignment</p>
+        <nav>
+            <a href="index.html">Exercise 01</a>
+            <a href="../bistro_news.html">Exercise 02 (5-3)</a>
+        </nav>
     </header>
 
     <main>
@@ -36,7 +40,12 @@
             <p>Some text that will fill up a paragraph in my article.</p>
             <h2>The Second Paragraph</h2>
             <p>Please write me some more text that will fill up the second paragraph in my article.</p>
-            <textarea placeholder="Sample Text."></textarea>    
+            <form>
+                <textarea name="paragraph_two" placeholder="Sample Text."></textarea>
+                <br>
+                <input type="submit"></input>
+                <input type="reset"></input>    
+            </form>
         </article>
     
         <article id="My Second Article">
@@ -78,6 +87,7 @@
                 <br>
                 
                 <input type="submit"></input>
+                <input type="reset"></input>
             </form>
             <h2>The Second Paragraph</h2>
             <p>Comparison of Each Monkey</p>
@@ -107,16 +117,23 @@
                     <td style="text-align: center">No.</td>
                 </tr>
             </table>
+            <h2>The Third Paragraph</h2>
             <p>What is your favorite kind of monkey?</p>
-            <select name="favorite_monkey">
-                <option>Snow Monkey</option>
-                <option>Spider Monkey</option>
-                <option>Long Nosed Monkey</option>
-                <option>Mandrill</option>
-            </select>
+            <form>
+                <select name="favorite_monkey">
+                    <option>Snow Monkey</option>
+                    <option>Spider Monkey</option>
+                    <option>Long Nosed Monkey</option>
+                    <option>Mandrill</option>
+                </select>
+
+                <input type="submit"></input>
+            </form>
         </article>
     </main>
 
-    <footer></footer>
+    <footer>
+        <p>Copyright&copy; me, 2024</p>
+    </footer>
 </body>
 </html>
