@@ -1,0 +1,9 @@
+<style>
+    p, div#intro {
+        color: yellow;
+    }
+    h2, li, div#main {
+        color: red;
+    }
+
+</style>
