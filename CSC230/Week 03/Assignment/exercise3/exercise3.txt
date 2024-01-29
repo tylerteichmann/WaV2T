@@ -1,0 +1,40 @@
+	/* 1)___universal____ Selector */
+	* { 
+		font-size: large; padding: 3px; 
+	} 
+
+	/* 2)___element____ Selector */
+	div { 
+		border:2px solid rgb(0, 102, 0); 
+	}
+
+	/* 3)___decendant____ Selector */
+	.divK p { 
+		color: red; 
+		font-weight: bold; 
+	}
+
+	/* 4)___child____ Selector */
+	.divK > p { 
+		background-color: lightgray; 
+	}
+
+	/* 5)___next-sibling____ Selector */
+	.divK + p { 
+		font-family: 'Times New Roman'; 
+		font-size: larger; 
+		font-weight: bold; 
+	}
+
+	/* 6)___subsequent-sibling___ Selector */
+	.divK ~ p { 
+		border:1px solid red; 
+	}
+
+	/* 7)___class____ Selector */
+	.divK { 
+		margin-left: 50px; 
+	}
+	.divGC { 
+		margin-left: 100px; 
+	}
