@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tteichmann\\OneDrive - Saint Martin's University\\Documents\\C#\\CsharpProjects\\TestProject\\TestProject.csproj",
+      "projectUniqueName": "C:\\Users\\tteichmann\\bookish-system\\C#\\CsharpProjects\\TestProject\\TestProject.csproj",
       "projectName": "TestProject",
-      "projectPath": "C:\\Users\\tteichmann\\OneDrive - Saint Martin's University\\Documents\\C#\\CsharpProjects\\TestProject\\TestProject.csproj",
+      "projectPath": "C:\\Users\\tteichmann\\bookish-system\\C#\\CsharpProjects\\TestProject\\TestProject.csproj",
       "packagesPath": "C:\\Users\\tteichmann\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tteichmann\\OneDrive - Saint Martin's University\\Documents\\C#\\CsharpProjects\\TestProject\\obj\\",
+      "outputPath": "C:\\Users\\tteichmann\\bookish-system\\C#\\CsharpProjects\\TestProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\tteichmann\\AppData\\Roaming\\NuGet\\NuGet.Config"
