@@ -6,12 +6,18 @@ def main():
     # print(divisible(4, 2))
     # print(divisible(5, 3))
 
-    print(fb(6))
-    print(fb(7))
-    print(fb(10))
-    print(fb(15))
+    # print(fb(6))
+    # print(fb(7))
+    # print(fb(10))
+    # print(fb(15))
+
+    print(parrot_trouble(True, 6))
+    print(parrot_trouble(True, 7))
+    print(parrot_trouble(False, 6))
+    print(parrot_trouble(True, 22))
 
     return 1
+
 
 # def print_lyrics():
 #     print("I'm a lumberjack, and I'm okay.")
@@ -32,20 +38,32 @@ def main():
 
 # def divisible(m, n):
 #     return m % n == 0
-    
-def fb(n):
 
-    if n % 3 == 0 and n % 5 == 0:
-        return "fizzbuzz"
+
+# def fb(n):
+
+#     if n % 3 == 0 and n % 5 == 0:
+#         return "fizzbuzz"
     
-    if n % 3 == 0:
-        return "fizz"
+#     if n % 3 == 0:
+#         return "fizz"
     
-    if n % 5 == 0:
-        return "buzz"        
+#     if n % 5 == 0:
+#         return "buzz"        
     
-    return "shucks"
-    
+#     return "shucks"
+
+
+# def sleep_in(weekday, vacation):
+#     return not weekday or vacation
+
+
+# def monkey_trouble(a_smile, b_smile):
+#     return a_smile == b_smile
+
+
+def parrot_trouble(talking, hour):
+    return talking and not (20 >= hour >= 7)
 
 
 if __name__ == '__main__':
