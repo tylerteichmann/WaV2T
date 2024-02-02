@@ -8,7 +8,7 @@ def swap_values(user_val1, user_val2, user_val3, user_val4):
     user_val3 = user_val4
     user_val4 = placeholder
 
-    return user_val1, user_val2, user_val3, user_val4
+    return [user_val1, user_val2, user_val3, user_val4]
 
 
 if __name__ == '__main__': 
@@ -20,4 +20,4 @@ if __name__ == '__main__':
 
     swap = swap_values(user_val1, user_val2, user_val3, user_val4)
 
-    print(swap[0], swap[1], swap[2], swap[3])
+    print(' '.join(swap))

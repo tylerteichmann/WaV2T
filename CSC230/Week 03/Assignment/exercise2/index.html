@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
+
         <title>title</title>
+
         <style>
-            body:not(.special) {
-                color: green;
+            body :not(div, .special, .special *) {
+                color: red;
             }
             
             #intro h2 {
@@ -20,27 +22,42 @@
             }
         </style>
     </head>
+
     <body>
+
         <h1>heading1</h1>
+
         <div id="main">
+
             <p class="special">
-                <img src="" alt="This is a placeholder, there is no image.">
+                <img src="" alt="This is a placeholder, there is no image.">some text to test the color
                 <strong>strong</strong>
             </p>
+
             <ul>
                 <li>list item 1</li>
                 <li>list item 2</li>
                 <li>list item 3</li>
             </ul>
+
         </div>
+
         <div id="intro">
+
             <h2>heading2</h2>
+
+
             <p>paragraph</p>
+
             <h2>heading2</h2>
+
             <p class="special">
                 <strong>strong</strong>
             </p>
+
         </div>
-        <p></p>
+
+        <p>footer</p>
+
     </body>
 </html>
