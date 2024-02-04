@@ -1,0 +1,63 @@
+1. <img>, <span>, <strong>
+2. <pre>my     space</pre>
+3. 
+    a. menu.txt is not an html document, and will not be correctly formatted by the browser.
+    b. tom'spage.html is technically acceptable, but not recommended as it contains an apostrophe.
+    c. Test_Result.htm is an acceptable filename
+    d. ./test.html contains illegal characters
+4.
+    a. <a href="f1.html">link to f1.html</a>
+    b. <h2><p>Section Title</p></h2>
+    c. <p style="text-align: center;">This will be at the center</p>
+    d. <head><title>My First Page!</title></head>
+5. A bullet point. It can be changed with style="list-style-type: none;"
+6.
+    a.<a href="/tutorial.html">link to tutorial.html</a>
+    b.<a href="/images/arrow.gif">link to arrow.gif</a>
+    c.<a href="/index.html">link to index.html</a>
+7.
+    <!-- In the question design, it appears as if 'TV Programs' only spans the first two columns. 
+    I have made the assumption this was meant to be across all columns.
+    If this is not the case, I would simply change the table header attribute to colspan="2" -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <style>
+            table, th, td {
+                border: solid;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th colspan="3">TV Programs</th>
+            </tr>
+            <tr>
+                <td>8:30PM</td>
+                <td>9:00PM</td>
+                <td>9:30PM</td>
+            </tr>
+            <tr>
+                <td>News Live!</td>
+                <td>Music</td>
+                <td>Sports</td>
+            </tr>
+            <tr>
+                <td>Free</td>
+                <td colspan="2">PayPerView</td>
+            </tr>
+        </table>
+    </body>
+    </html>
+8.
+    a.  dt {
+        }
+    b.  div#entrees h2 {
+        }
+    c.  div#appetizers p, div#entrees p {
+    }
+9.
+    a. Style all paragraph elements that are children of div element with the id of "firstdiv".
+    b. Style all h1 elements and all elements with the class of "special".
+    v. Style all visited anchor elements that are decendents of a div element.
