@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            background-image: url(bread.png);
+            background-repeat: no-repeat;
+            background-size: 100vh;
+        }
+        body {
+            background-color: darkslategray;
+            border: solid;
+        }
+        header {
+            box-sizing: border-box;
+            border: solid;
+            background-color: grey;
+        }
+    </style>
+</head>
+<body onclick="myfunction(2, 3)">
+    <header>
+        Header
+    </header>
+    <p id="demo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde atque neque ipsa. Unde molestias nulla modi minima voluptatem rem, veniam dolorem ratione voluptate cupiditate, vitae dolore sed ex debitis praesentium?</p>
+    
+    <script>      
+        function myfunction (a, b) {
+            let x = a * b;
+            document.getElementById("demo").innerHTML = x;
+        }
+    </script>
+</body>
+</html>
