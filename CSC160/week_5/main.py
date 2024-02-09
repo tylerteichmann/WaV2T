@@ -43,10 +43,37 @@ import random
 # lot = [(v[0], v[-1]) for v in lol]
 # print(lot)
 
-string = "Mary had a little lamb"
-string = string.replace(' ', '*')
+# string = "Mary had a little lamb"
+# string = string.replace(' ', '*')
 
-# list = string.split()
-# string = '*'.join(list)
+# # list = string.split()
+# # string = '*'.join(list)
 
-print(string)
+# print(string)
+
+# adict = {
+#     "Joe":175,
+#     "Tom":190,
+#     "Dick":150,
+#     "Jerry":150
+# }
+
+# new_dict = {}
+
+# for key, value in adict.items():
+#     new_dict[value] = key
+
+# print(new_dict)
+
+# print(len(str(2**100)))
+
+# alist = list("This is just a proof of generality")
+
+alist = list("qwertyuiopasdfghjkl")
+dict_count = {}
+
+for letter in alist:
+    dict_count[letter] = (alist.count(letter), 4)
+
+for key, value in dict_count:
+    print(key)
