@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>name</th>
+            <th>height</th>
+            <th>place</th>
+        </tr>
+        <tr>
+            <td>Kilimanjaro</td>
+            <td>5895</td>
+            <td>Tanzania</td>
+        </tr>
+    </table>
+    <script>
+        var MOUNTAINS = [
+            {name: "Mt. Rainer", height:14417, Place: "Washington State"},
+            {name: "Mt. Adams", height:12281, Place: "Washington State"},
+            {name: "Mt. Baker", height:10786, Place: "Washington State"},
+        ];
+
+        function buildTable(data) {
+            var table = document.createElement("table");
+
+            // your javascript code here to create a table
+
+            // create the header by iterating through the keys in the first object of the array and appending it to the header
+            header = document.createElement("tr");
+            objectKeys = Object.keys(data[0]);
+            
+            for (let i = 0; i < objectKeys.length; i++) {
+                key = document.createElement("th");
+                key.appendChild(document.createTextNode(objectKeys[i]));
+                header.appendChild(key);
+            }
+            table.appendChild(header);
+
+            // create rows by iterating thorugh each object in the array, then iterating through the keys in each object and appending the value at that key.
+            for (let i = 0; i < data.length; i++) {
+                row = document.createElement("tr");
+                for (let j = 0; j < objectKeys.length; j++) {
+                    column = document.createElement("td");
+                    column.appendChild(document.createTextNode(data[i][objectKeys[j]]));
+                    // if the text is numbers. style.textAlign("right")
+                    if (typeof data[i][objectKeys[j]] == "number") {
+                        column.style.textAlign = "right";
+                    }
+                    row.appendChild(column);
+                }
+                table.appendChild(row);
+            }
+
+            table.id = "mountains";
+
+            return table;
+        }
+
+        // invoke the buildTable function:
+        document.body.appendChild(buildTable(MOUNTAINS));
+    </script>
+</body>
+</html>
