@@ -14,5 +14,4 @@ with open("output_keys.txt", 'w') as file:
 
 
 with open("output_titles.txt", 'w') as file:
-    string = f'{"\\n".join(sorted([show for value in shows.values() for show in value], reverse=True))}'
-    file.write(string)
+    file.write("\n".join(sorted([show for value in shows.values() for show in value], reverse=True)) + "\n")
