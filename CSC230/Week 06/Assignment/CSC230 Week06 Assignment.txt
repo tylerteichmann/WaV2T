@@ -1,0 +1,29 @@
+CSC230 Week06 Assignment
+Build a full-stack MERN application
+
+Step 1: Equip yourself with necessary basic knowledge about JS, Node.JS, Express.JS, React and MongoDB. The following tutorials are helpful. You’re encouraged to complete some if not all of them. No submission is required for this step.
+Reading/Watching Assignment from Moodle: 
+  1) Node.js Tutorial for Beginners: Learn Node in 1 Hour by Mosh
+    https://www.youtube.com/watch?v=TlB_eWDSMt4&t=2566s
+  2) React tutorial on w3schools.com
+    https://www.w3schools.com/REACT/DEFAULT.ASP
+  3) MongoDB Crash Course 2022 by Traversy Media (28min)
+    https://www.youtube.com/watch?v=2QQGWYe7IDU
+  4) From the book: Eloquent JavaScript 3rd edition (2018) (https://eloquentjavascript.net/)
+    Chapter 20 - Node.js
+    Chapter 21 - Project: Skill-Sharing Website
+  5) MERN Stack Crash Course Tutorial by Net Ninja 14 videos
+    https://www.youtube.com/playlist?list=PL4cUxeGkcC9iJ_KkrkBZWZRHVwnzLIoUE
+
+Step 2: Code along the MERN tutorial by MongoDB – “How to Use MERN Stack: A Complete Guide”. See description below:
+“This tutorial will show you how to build a full-stack MERN application—in this case, an employee database—with the most current tools available. Before you begin, make sure that you are familiar with Node.js and React.js basics and have Node and Create React App installed. You will also need access to the MongoDB Atlas database for this tutorial. The full code is available on this GitHub repo.”
+URLS: 
+How to Use MERN Stack: A Complete Guide
+https://www.mongodb.com/languages/mern-stack-tutorial
+GitHub code repository:
+https://github.com/mongodb-developer/mern-stack-example
+
+Submission requirement:
+1) Code repository on your github account or source code (only) in a zip file.
+2) Screenshots of a series of editing and deleting employee operations and other major operations.
+gBkJppV6b8MCkYBD
