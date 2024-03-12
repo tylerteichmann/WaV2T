@@ -26,4 +26,3 @@ https://github.com/mongodb-developer/mern-stack-example
 Submission requirement:
 1) Code repository on your github account or source code (only) in a zip file.
 2) Screenshots of a series of editing and deleting employee operations and other major operations.
-gBkJppV6b8MCkYBD
