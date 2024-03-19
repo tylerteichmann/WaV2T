@@ -16,9 +16,29 @@ public class GuessingGame {
 
         // Create a new instance of a scanner object
         Scanner scanner = new Scanner(System.in);
-
-        // Read the input from the user
-        int userGuess = scanner.nextInt();
         
+        // Create a variable to store the user's guess
+        int userGuess = -1;
+
+        // Check the users guess
+        while (userGuess != randomNumber) {
+            // prompt the user to enter a guess.
+            System.out.println("Enter your guess now: ");
+
+            // Read the input from the user. Assume user will enter just an integer in the desired range
+            userGuess = scanner.nextInt();
+
+            if (userGuess < randomNumber) {
+                System.out.println("Guessed number was too low, try again!");
+            } else if (userGuess > randomNumber) {
+                System.out.println("Guessed number was too high, try again!");
+            }
+        }
+
+        // close the scanner
+        scanner.close();
+
+        // While loop is broken, user wins
+        System.out.println("You guessed correctly! Great job!");
     }
 }
