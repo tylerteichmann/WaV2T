@@ -27,7 +27,7 @@ public class Main {
 
     // Method to roll the dice
     static int rollDice() {
-        // Generate a randome number between 1 and six inclusive and set it as an integer variable named result.
+        // Generate a random number between 1 and six inclusive and set it as an integer variable named result.
         int result = (int)(Math.random() * 6) + 1;
         // Return result.
         return result;

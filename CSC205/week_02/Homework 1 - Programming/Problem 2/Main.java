@@ -11,7 +11,7 @@ public class Main {
         // Ask the user for their name
         System.out.println("Hello, what is your name?");
         
-        // Initiallize a new scanner object to read input from the user
+        // Initialize a new scanner object to read input from the user
         Scanner scanner = new Scanner(System.in);
 
         // Read the user's input and store it in a variable called userName

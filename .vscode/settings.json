@@ -1,8 +1,9 @@
 {
     "python.REPL.enableREPLSmartSend": false,
     "java.project.sourcePaths": [
-        "CSC295/week_01/Searches",
-        "CSC205/week_01/GuessingGame"
+        "CSC295/week_02",
+        "CSC295",
+        "CSC205/week_02/Homework 1 - Programming/Problem 3"
     ],
     "C_Cpp.default.compilerPath": "c:\\msys64\\mingw64\\bin\\gcc.exe"
 }

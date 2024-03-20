@@ -7,31 +7,31 @@ import java.util.Scanner;
 public class Main {
     // main method for the application
     public static void main(String[] args) {
-        // Initiallize a new scanner object to read input from the user
+        // Initialize a new scanner object to read input from the user
         Scanner scanner = new Scanner(System.in);
 
         // Ask the user to input the number of quarters they have
-        System.out.println("Please enter the number of quarters you have!");
+        System.out.print("Please enter the number of quarters you have! ");
 
         // Read the number of quarters and store it as a variable called numQuarters
         int numQuarters = scanner.nextInt();
 
         // Ask the user to input the number of dimes they have
-        System.out.println("Please enter the number of dimes you have!");
+        System.out.print("Please enter the number of dimes you have! ");
 
-        // Read the number of quarters and store it as a variable called numDimes
+        // Read the number of dimes and store it as a variable called numDimes
         int numDimes = scanner.nextInt();
 
         // Ask the user to input the number of quarters they have
-        System.out.println("Please enter the number of nickels you have!");
+        System.out.print("Please enter the number of nickels you have! ");
 
-        // Read the number of quarters and store it as a variable called numNickels
+        // Read the number of nickels and store it as a variable called numNickels
         int numNickels = scanner.nextInt();
 
         // Ask the user to input the number of quarters they have
-        System.out.println("Please enter the number of pennies you have!");
+        System.out.print("Please enter the number of pennies you have! ");
 
-        // Read the number of quarters and store it as a variable called numPennies
+        // Read the number of pennies and store it as a variable called numPennies
         int numPennies = scanner.nextInt();
 
         // Close the scanner
@@ -52,7 +52,8 @@ public class Main {
         // Add the number of pennies times .01 to dollars
         dollars += numPennies * 0.01;
 
-        System.out.println("You have $" + dollars);
+        // Print formatted to two decimal places the value of the dollars variable.
+        System.out.printf("You have $%.2f\n", dollars);
 
     }
 }
