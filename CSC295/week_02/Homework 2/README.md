@@ -1,0 +1,7 @@
+The purpose of this program was to find an integer value that occurs only once in a non-decreasing array of integer pairs of repeating values. The program takes no input and returns nothing.
+
+# "main" method
+This is the main method of the program. It is used to initialize the test arrays, call a function that finds the value that occurs once, and prints that value to the console. It takes no input and returns no value. The method starts by initializing three array literals of small (7), medium (15), and large (29) lengths. Next, the program will print a string literal concatenated with the return value of the findSingle method using the small array as an argument. The program does this again with the medium array, and then the large array. The method then resolves without returning a value.
+
+# "findSingle" method
+This is the method to search an array with the pre-established constraints for the value that occurs only once. It takes an input array of integer values and assumes valid input. It returns the integer value that occurs only once in the array. This method is recursive. The method starts by evaluating the base case. If the length of the input array is one, it only contains the value that occurs once and returns that value. Next, the method declares an integer variable named "mid" and initializes it to the length of the input array divided by 2.
