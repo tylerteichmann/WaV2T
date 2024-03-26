@@ -3,7 +3,8 @@
     "java.project.sourcePaths": [
         "CSC295/week_02",
         "CSC295",
-        "CSC205/week_02/Homework 1 - Programming/Problem 3"
+        "CSC205/week_02/Homework 1 - Programming/Problem 3",
+        "CSC205/week_03/Homework 2 - Programming"
     ],
     "C_Cpp.default.compilerPath": "c:\\msys64\\mingw64\\bin\\gcc.exe"
 }
