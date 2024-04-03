@@ -25,7 +25,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         // Ask the user which algorithm to use
-        System.out.println("Please input the algorithm you would like to use.");
+        System.out.println("Please input the algorithm you would like to use.\n Bubble\n Selection \n Insertion \n Merge \n Quick");
         // Store the users response in a variable called algorithm
         String algorithm = scanner.nextLine().toLowerCase();
         // Close the scanner

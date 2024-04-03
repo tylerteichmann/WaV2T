@@ -14,6 +14,9 @@ public class Main {
         // Display second type
         System.out.println(type2);
 
+        // Print a line for clarity
+        System.out.println();
+
         // Define pokemon 1
         Pokemon pokemon1 = new Pokemon();
         // Define pokemon 2

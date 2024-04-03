@@ -14,31 +14,37 @@ public class Pokemon {
 
     // Getter for name
     public String getName() {
+        // Return the name
         return this.name;
     }
 
     // Setter for name
     public void setName(String name) {
+        // Set the name
         this.name = name;
     }
 
     // Getter for type
     public Type getType() {
+        // Return the name
         return this.type;
     }
 
     // Setter for type
     public void setType(Type type) {
+        // Set the name
         this.type = type;
     }
 
     // Getter for hp
     public int getHp() {
+        // Return the name
         return this.hp;
     }
 
     // Setter for hp
     public void setHp(int hp) {
+        // Set the name
         this.hp = hp;
     }
 }
