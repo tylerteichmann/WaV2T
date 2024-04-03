@@ -1,0 +1,4 @@
+node_modules/
+django_projects/
+.*
+!/.gitignore
