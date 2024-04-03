@@ -1,2 +1,4 @@
 node_modules/
 django_projects/
+.vscode/
+.idea/
