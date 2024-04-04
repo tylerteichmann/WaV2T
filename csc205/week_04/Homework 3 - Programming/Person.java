@@ -1,59 +1,118 @@
+// Tyler J. Teichmann
+
+/**
+ * Person class
+ */
 public class Person {
+    // Private property for a person's age.
     private int age;
+    // Private property for a person's target heart rate percentage.
     private double targetHeartRatePercentage;
+    // Private property for a person's resting heart rate.
     private int restingHeartRate;
 
-    // this is the default constructor
+    /**
+     * This is the default constructor if no inputs are provided.
+     */
     public Person() {
+        // Set age to 20.
         this.age = 20;
+        // Set target heart rate percentage to 70%.
         this.targetHeartRatePercentage = 0.7;
+        // Set the resting heart rate to 80 beats per minute.
         this.restingHeartRate = 80;
     }
 
-    // this is the nondefault constructor
+    /**
+     * This is the non-default constructor.
+     * @param age Person's age.
+     * @param restingHeartRate Person's resting heart rate.
+     * @param targetHeartRatePercentage Person's desired target heart rate percentage.
+     */
     public Person(int age, int restingHeartRate, double targetHeartRatePercentage) {
+        // Set age to the input age.
         this.age = age;
+        // Set the target heart rate percentage to the input target heart rate percentage.
         this.targetHeartRatePercentage = targetHeartRatePercentage;
+        // Set the resting heart rate to the input target heart rate.
         this.restingHeartRate = restingHeartRate;
     }
 
-    // this is the getter for age
-    public int getAge() {
+    /**
+     * Gets the person's age.
+     * @return Returns the person's age.
+     */
+    public int GetAge() {
+        // Return the person's age.
         return this.age;
     }
 
-    // this is the getter for targetHeartRatePercentage
-    public double getTargetHeartRatePercentage() {
+    /**
+     * Gets the person's target heart rate percentage.
+     * @return Returns the person's target heart rate percentage.
+     */
+    public double GetTargetHeartRatePercentage() {
+        // Return the person's target heart rate percentage.
         return this.targetHeartRatePercentage;
     }
 
-    // this is the getter for resting heart rate
-    public int getRestingHeartRate() {
+    /**
+     * Gets the person's resting heart rate.
+     * @return Returns the person's resting heart rate.
+     */
+    public int GetRestingHeartRate() {
+        // Return the resting heart rate for the person.
         return this.restingHeartRate;
     }
 
-    // this is the setter for age
-    public void setAge(int age) {
+    /**
+     * Sets a person's age.
+     * @param age Takes the person's age as an input.
+     */
+    public void SetAge(int age) {
+        // Set the person's age equal to the input age.
         this.age = age;
     }
     
-    // this is the setter for target heart rate percentage
-    public void setTargetHeartRatePercentage(double targetHeartRatePercentage) {
+    /**
+     * Sets the target heart rate percentage for a person.
+     * @param targetHeartRatePercentage Takes the target heart rate percentage as input.
+     */
+    public void SetTargetHeartRatePercentage(double targetHeartRatePercentage) {
+        // Set the person's target heart rate percentage to the input percentage.
         this.targetHeartRatePercentage = targetHeartRatePercentage;
     }
 
-    // this is the setter for target heart rate percentage
-    public void setRestingHeartRate(int restingHeartRate) {
+    /**
+     * Sets the resting heart rate for a person.
+     * @param restingHeartRate Takes the resting heart rate as input.
+     */
+    public void SetRestingHeartRate(int restingHeartRate) {
+        // Set the resting heart rate to the input heart rate.
         this.restingHeartRate = restingHeartRate;
     }
 
-    // Method 1
-    public void method1() {
 
+
+    // TODO
+
+
+    /**
+     * Method 1.
+     * Method for a person to get older.
+     */
+    public void Age() {
+        // Increment age by one year.
+        this.age++;
     }
 
-    // Method 2
-    public int method2() {
-        return 1;
+    /**
+     * Method 2.
+     * Quickly calculates a person's max heart rate.
+     * @return Returns a person's max heart rate based on their age.
+     */
+    public double MaxHeartRate() {
+        // Calculate the max heart rate by using the provided max heart rate formula.
+        return 206.3 - (0.711 * this.age);
     }
 }
