@@ -2,6 +2,7 @@
 
 // Item class.
 public class Item {
+
     // id attribute.
     private String id;
     // name attribute.
@@ -9,54 +10,89 @@ public class Item {
     // quantity attribute.
     private int quantity;
 
-    // Constructor class to initialize all attributes.
+
+    /**
+     * Non-default constructor for an Item.
+     * @param name Name of the item.
+     * @param id Id of the item.
+     */
     public Item(String name, String id) {
-        // Set the id to the input id from the user
+        // Set the id to the input id from the user.
         this.id = id;
-        // Set the name to the input name from the user
+        // Set the name to the input name from the user.
         this.name = name;
         // Set the quantity to one.
         this.quantity = 1;
     }
 
-    // ...
-    public String toString() {
+
+    /**
+     * Gets the id of the item.
+     * @return Returns the item's id.
+     */
+    public String GetId() {
+        // Return the id for the item.
         return this.id;
     }
 
-    // Getter for the item id.
-    public String getId() {
-        // return the id for the item
-        return this.id;
-    }
-
-    // Getter for the item name.
-    public String getName() {
-        // return the name of the item
+    /**
+     * Gets the name of the item.
+     * @return Returns the item's name.
+     */
+    public String GetName() {
+        // Return the name of the item.
         return this.name;
     }
 
-    // Getter for the item quantity.
-    public int getQuantity() {
-        // return the quantity of the item
+    /**
+     * Gets the quantity of the item.
+     * @return Returns the item's quantity.
+     */
+    public int GetQuantity() {
+        // Return the quantity of the item
         return this.quantity;
     }
     
-    // Setter for the item id.
-    public void setId(String id) {
+    /**
+     * Set the item's id.
+     * @param id Takes the new id of the item.
+     */
+    public void SetId(String id) {
         // Set the id of the item to the input id
         this.id = id;
     }
 
-    // Setter for the item name.
-    public void setName(String name) {
-        // Set the name of the item to the input name
+    /**
+     * Sets the item's name.
+     * @param name Takes the new name of the item as input.
+     */
+    public void SetName(String name) {
+        // Set the name of the item to the input name.
         this.name = name;
     }
 
-    // Setter for the item quantity.
-    public void setQuantity(int quantity) {
+    /**
+     * Sets the item's quantity.
+     * @param quantity Takes the quantity of the item as input.
+     */
+    public void SetQuantity(int quantity) {
         // Set the quantity of the item to the input quantity.
         this.quantity = quantity;
+    }
+
+    /**
+     * Increments or decrements the quantity of an item.
+     * @param increment Input true to increment, false to decrement. 
+     */
+    public void IncrementQuantity(boolean increment) {
+        // If increment is true.
+        if (increment) {
+            // Increment the quantity.
+            this.quantity++;
+        // Else
+        } else {
+            // Decrement the quantity.
+            this.quantity--;
+        }
     }
 }
