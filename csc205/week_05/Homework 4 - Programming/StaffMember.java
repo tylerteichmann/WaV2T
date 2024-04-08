@@ -1,3 +1,5 @@
+// Tyler J. Teichmann
+
 //********************************************************************
 // StaffMember.java Author: **hidden**
 // Represents a generic staff member.

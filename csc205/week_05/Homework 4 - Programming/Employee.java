@@ -1,3 +1,5 @@
+// Tyler J. Teichmann
+
 //********************************************************************
 // Employee.java Author: **hidden**
 // Represents a general paid employee.

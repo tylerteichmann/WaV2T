@@ -1,3 +1,5 @@
+// Tyler J. Teichmann
+
 //********************************************************************
 // Firm.java Author: **hidden**
 // Demonstrates polymorphism via inheritance.

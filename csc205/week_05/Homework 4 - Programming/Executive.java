@@ -1,3 +1,5 @@
+// Tyler J. Teichmann
+
 //********************************************************************
 // Executive.java Author: **hidden**
 // Represents an executive staff member, who can earn a bonus.

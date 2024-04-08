@@ -1,3 +1,5 @@
+// Tyler J. Teichmann
+
 //********************************************************************
 // Hourly.java Author: **hidden**
 // Represents an employee that gets paid by the hour.

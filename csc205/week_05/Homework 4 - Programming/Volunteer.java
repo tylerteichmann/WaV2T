@@ -1,3 +1,5 @@
+// Tyler J. Teichmann
+
 //********************************************************************
 // Volunteer.java Author: **hidden**
 // Represents a staff member that works as a volunteer.
