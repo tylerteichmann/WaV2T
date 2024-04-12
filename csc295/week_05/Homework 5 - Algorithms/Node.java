@@ -20,8 +20,13 @@ public class Node<T> {
         this.previous = null;
     }
 
-    public Node(T data, Node<T> next) {
+    // Constructor for the node if location is specified.
+    public Node(T data, Node<T> next, Node<T> previous) {
+        // Set the data in the node.
         this.data = data;
+        // Set the next node in the list.
         this.next = next;
+        // Set the previous node in the list.
+        this.previous = previous;
     }
 }
