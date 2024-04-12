@@ -106,9 +106,6 @@ public class Program {
 
         // If we complete the for loop, the item is not in the inventory and we can create a new Item with the name and id.
         inventory.add(new Item(name, id));
-
-        // // Close the scanner.
-        // scanner.close();
     }
 
 
