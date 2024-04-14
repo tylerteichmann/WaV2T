@@ -8,9 +8,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 // Import assertNull for testing methods.
 import static org.junit.Assert.assertNull;
-// Import assertThrows for testing methods.
-import static org.junit.Assert.assertThrows;
-
 
 // Public class for the Tests.
 public class EmptyList_MyLinkedListTest {

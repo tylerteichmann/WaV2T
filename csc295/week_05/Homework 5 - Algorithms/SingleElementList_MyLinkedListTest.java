@@ -10,9 +10,6 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
 // Import assertNull for testing methods.
 import static org.junit.Assert.assertNull;
-// Import assertThrows for testing methods.
-import static org.junit.Assert.assertThrows;
-
 
 // Public class for the Tests.
 public class SingleElementList_MyLinkedListTest {
