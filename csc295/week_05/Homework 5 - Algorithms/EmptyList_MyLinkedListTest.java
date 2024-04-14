@@ -4,9 +4,12 @@
 import org.junit.Test;
 // Import assertEquals for testing methods.
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertThrows;
+// Import assertTrue for testing methods.
 import static org.junit.Assert.assertTrue;
+// Import assertNull for testing methods.
+import static org.junit.Assert.assertNull;
+// Import assertThrows for testing methods.
+import static org.junit.Assert.assertThrows;
 
 
 // Public class for the Tests.
@@ -41,6 +44,7 @@ public class EmptyList_MyLinkedListTest {
 
     // Annotation for test method.
     @Test
+    // Test method for Head method
     public void Head_EmptyList_HeadPointsToNull(){
         // Arrange.
         MyLinkedList<Integer> testList = new MyLinkedList<Integer>();
@@ -51,6 +55,7 @@ public class EmptyList_MyLinkedListTest {
 
     // Annotation for test method.
     @Test
+    // Test method for Tail method
     public void Tail_EmptyList_TailPointsToNull() {
         // Arrange.
         MyLinkedList<Integer> testList = new MyLinkedList<Integer>();
@@ -61,6 +66,29 @@ public class EmptyList_MyLinkedListTest {
 
     // Annotation for test method.
     @Test
+    // Test method for ForwardTraverse method
+    public void ForwardTraverse_FilledList_BracketsWithElements() {
+        // Arrange
+        MyLinkedList<Integer> testList = new MyLinkedList<Integer>();
+
+        // Act - Assert
+        assertEquals(testList.ForwardTraverse(), "[  ]");
+    }
+
+    // Annotation for test method.
+    @Test
+    // Test method for ReverseTraverse method
+    public void ReverseTraverse_FilledList_BracketsWithElements() {
+        // Arrange
+        MyLinkedList<Integer> testList = new MyLinkedList<Integer>();
+
+        // Act - Assert
+        assertEquals(testList.ReverseTraverse(), "[  ]");
+    }
+
+    // Annotation for test method.
+    @Test
+    // Test method for Size method
     public void Size_EmptyList_Zero() {
         // Arrange.
         MyLinkedList<Integer> testList = new MyLinkedList<Integer>();
@@ -70,7 +98,8 @@ public class EmptyList_MyLinkedListTest {
     }
 
     // Annotation for test method.
-    @Test 
+    @Test
+    // Test method for IsEmpty method
     public void IsEmpty_EmptyList_True() {
         // Arrange.
         MyLinkedList<Integer> testList = new MyLinkedList<Integer>();
@@ -82,14 +111,15 @@ public class EmptyList_MyLinkedListTest {
     // Annotation for test method.
     @Test
     // Test method for Get method.
-    public void Get_EmptyList_NullPointerException() {
+    public void Get_EmptyList_ReturnsNull() {
         // Arrange.
         MyLinkedList<Integer> testList = new MyLinkedList<Integer>();
 
         // Act - Assert.
-        assertThrows(NullPointerException.class, () -> testList.Get(5));
+        assertNull(testList.Get(10));
     }
 
+    // Annotation for test method.
     @Test
     // Test method for AddFront method
     public void AddFront_EmptyList_HeadAndTailPointToItemSizeIsOne() {
@@ -97,17 +127,23 @@ public class EmptyList_MyLinkedListTest {
         MyLinkedList<Integer> testList = new MyLinkedList<Integer>();
 
         // Act.
-        testList.AddFront(4);
+        testList.AddFront(TESTINTEGER);
 
-        // Assert.
-        assertEquals((Integer)4, testList.Head().data);
+        // Assert head equals the test integer.
+        assertEquals(TESTINTEGER, testList.Head().data);
+        // Assert head's next node points to null.
         assertNull(testList.Head().next);
+        // Assert head's previous node points to null.
         assertNull(testList.Head().previous);
 
-        assertEquals((Integer)4, testList.Tail().data);
+        // Assert tail equals the test integer.
+        assertEquals(TESTINTEGER, testList.Tail().data);
+        // Assert tail's next node points to null.
         assertNull(testList.Tail().next);
+        // Assert tail's next node points to null.
         assertNull(testList.Tail().previous);
 
+        // Assert size equals 1.
         assertEquals(1, testList.Size());
     }
 
@@ -119,105 +155,157 @@ public class EmptyList_MyLinkedListTest {
         MyLinkedList<Integer> testList = new MyLinkedList<Integer>();
 
         // Act.
-        testList.Append(4);
+        testList.Append(TESTINTEGER);
 
-        // Assert.
-        assertEquals((Integer)4, testList.Head().data);
+        // Assert head equals the test integer.
+        assertEquals(TESTINTEGER, testList.Head().data);
+        // Assert head's next node points to null.
         assertNull(testList.Head().next);
+        // Assert head's previous node points to null.
         assertNull(testList.Head().previous);
 
-        assertEquals((Integer)4, testList.Tail().data);
+        // Assert tail equals the test integer.
+        assertEquals(TESTINTEGER, testList.Tail().data);
+        // Assert tail's next node points to null.
         assertNull(testList.Tail().next);
+        // Assert tail's previous node points to null.
         assertNull(testList.Tail().previous);
 
+        // Assert size equals 1.
         assertEquals(1, testList.Size());    }
 
     // Annotation for test method.
     @Test
-    // Test method for Append method.
+    // Test method for Insert method with a positive index.
     public void Insert_EmptyListWithPositiveIndex_HeadAndTailPointToItemSizeIsOne() {
         // Arrange.
         MyLinkedList<Integer> testList = new MyLinkedList<Integer>();
+        // Index to test insertion.
+        int insertIndex = 0;
 
         // Act.
-        testList.Insert(0, 4);
+        testList.Insert(insertIndex, TESTINTEGER);
 
-        // Assert.
-        assertEquals((Integer)4, testList.Head().data);
+        // Assert head equals the test integer.
+        assertEquals(TESTINTEGER, testList.Head().data);
+        // Assert head's next node points to null.
         assertNull(testList.Head().next);
+        // Assert head's previous node points to null.
         assertNull(testList.Head().previous);
 
-        assertEquals((Integer)4, testList.Tail().data);
+        // Assert tail equals the test integer.
+        assertEquals(TESTINTEGER, testList.Tail().data);
+        // Assert tail's next node points to null.
         assertNull(testList.Tail().next);
+        // Assert tail's previous node points to null.
         assertNull(testList.Tail().previous);
 
+        // Assert size equals 1.
         assertEquals(1, testList.Size());
     }
 
     // Annotation for test method.
     @Test
-    // Test method for Append method.
+    // Test method for Insert method with a negative index.
     public void Insert_EmptyListWithNegativeIndex_HeadAndTailPointToItemSizeIsOne() {
         // Arrange.
         MyLinkedList<Integer> testList = new MyLinkedList<Integer>();
+        // Index to test insertion.
+        int insertIndex = -1;
 
         // Act.
-        testList.Insert(-1, 4);
+        testList.Insert(insertIndex, TESTINTEGER);
 
         // Assert.
-        assertEquals((Integer)4, testList.Head().data);
+        // Assert head equals the test integer.
+        assertEquals(TESTINTEGER, testList.Head().data);
+        // Assert head's next node points to null.
         assertNull(testList.Head().next);
+        // Assert head's previous node points to null.
         assertNull(testList.Head().previous);
 
-        assertEquals((Integer)4, testList.Tail().data);
+        // Assert tail equals the test integer.
+        assertEquals(TESTINTEGER, testList.Tail().data);
+        // Assert tail's next node points to null.
         assertNull(testList.Tail().next);
+        // Assert tail's previous node points to null.
         assertNull(testList.Tail().previous);
 
+        // Assert size equals 1.
         assertEquals(1, testList.Size());
     }
 
     // Annotation for test method.
     @Test
-    // Test method for Append method.
-    public void Insert_EmptyListWithIndexOutOfBounds_NullPointerException() {
+    // Test method for Insert method with an index out of bounds.
+    public void Insert_EmptyListWithIndexOutOfBounds_ListDoesNotChange() {
         // Arrange.
         MyLinkedList<Integer> testList = new MyLinkedList<Integer>();
+        // Index to test insertion.
+        int insertIndex = 10;
 
-        // Act - Assert.
-        assertThrows(NullPointerException.class, () -> testList.Insert(5, 4));
-        assertThrows(NullPointerException.class, () -> testList.Insert(-5, 4));
+        // Act
+        testList.Insert(insertIndex, TESTINTEGER);
+    
+        // Assert list should be empty
+        assertTrue(testList.IsEmpty());
     }
 
     // Annotation for test method.
     @Test
-    // Test method for Append method.
-    public void DeleteFront_EmptyList_NullPointerException() {
+    // Test method for DeleteFront method.
+    public void DeleteFront_EmptyList_ListDoesNotChange() {
         // Arrange.
         MyLinkedList<Integer> testList = new MyLinkedList<Integer>();
 
-        // Act - Assert.
-        assertThrows(NullPointerException.class, () -> testList.DeleteFront());
+        // Act
+        testList.DeleteFront();
+
+        // Assert.
+        assertTrue(testList.IsEmpty());
     }
 
     // Annotation for test method.
     @Test
-    // Test method for Append method.
-    public void DeleteBack_EmptyList_NullPointerException() {
+    // Test method for DeleteBack method.
+    public void DeleteBack_EmptyList_ListDoesNotChange() {
         // Arrange.
         MyLinkedList<Integer> testList = new MyLinkedList<Integer>();
 
-        // Act - Assert.
-        assertThrows(NullPointerException.class, () -> testList.DeleteBack());
+        // Act
+        testList.DeleteBack();
+
+        // Assert.
+        assertTrue(testList.IsEmpty());
     }
 
     // Annotation for test method.
     @Test
-    // Test method for Append method.
-    public void DeleteNodeBasedOnValue_EmptyList_NullPointerException() {
+    // Test method for DeleteNodeBasedOnValue method.
+    public void DeleteNodeBasedOnValue_EmptyList_ListDoesNotChange() {
         // Arrange.
         MyLinkedList<Integer> testList = new MyLinkedList<Integer>();
 
-        // Act - Assert.
-        assertThrows(NullPointerException.class, () -> testList.DeleteNodeBasedOnValue(4));
+        // Act
+        testList.DeleteNodeBasedOnValue(10);
+
+        // Assert.
+        assertTrue(testList.IsEmpty());
+    }
+
+    // Annotation for test method.
+    @Test
+    // Test method for Remove method.
+    public void Remove_EmptyList_ListDoesNotChange() {
+        // Arrange.
+        MyLinkedList<Integer> testList = new MyLinkedList<Integer>();
+        // Index to test insertion.
+        int removeIndex = 10;
+
+        // Act
+        testList.Remove(removeIndex);
+
+        // Assert.
+        assertTrue(testList.IsEmpty());
     }
 }

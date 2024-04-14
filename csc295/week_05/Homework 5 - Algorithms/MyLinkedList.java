@@ -87,13 +87,73 @@ public class MyLinkedList<T> {
     }
 
     /**
+     * Prints the list in reverse
+     * @return Returns a string for testing
+     */
+    public String ForwardTraverse() {
+        // Create the return string and start with [
+        String returnString = "[ ";
+
+        // Create a node to track position in the list
+        Node<T> currentNode = this.head;
+
+        // While the node is not null
+        while (currentNode != null) {
+            // Add the data at the current node to the string
+            returnString += currentNode.data;
+            // Advance the node
+            currentNode = currentNode.next;
+            // if there is another node add a comma
+            if (currentNode != null) returnString += ", ";
+        }
+        // End the string with a ]
+        returnString += " ]";
+
+        // Print the string
+        System.out.println(returnString);
+
+        // Return the new string.
+        return returnString;
+    }
+
+    /**
+     * Prints the list in reverse
+     * @return
+     */
+    public String ReverseTraverse() {
+        // Create the return string and start with [
+        String returnString = "[ ";
+
+        // Create a node to track position in the list
+        Node<T> currentNode = this.tail;
+
+        // While the node is not null
+        while (currentNode != null) {
+            // Add the data at the current node to the string
+            returnString += currentNode.data;
+            // Advance the node
+            currentNode = currentNode.previous;
+            // if there is another node add a comma
+            if (currentNode != null) returnString += ", ";
+        }
+        // End the string with a ]
+        returnString += " ]";
+
+        // Print the string
+        System.out.println(returnString);
+
+        // Return the new string.
+        return returnString;
+    }
+
+    /**
      * Gets a given index in the linked list.
      * @param index Takes the desired index to get as input.
      * @return Returns the object value at that element.
      */
-    public T Get(int index) {
+    public Node<T> Get(int index) {
         // Identify if indexing using positive or negative indices.
-        if (index < 0) {
+        if (-this.size <= index && index < 0) {
             // Create a new node that points to a position in the list. Set it equal to the tail of the list.
             Node<T> currentNode = this.tail;
 
@@ -104,8 +164,8 @@ public class MyLinkedList<T> {
             }
 
             // Return the data at the current Node.
-            return currentNode.data;
-        } else {
+            return currentNode;
+        } else if (0 <= index && index < this.size) {
             // Create a new node that points to a position in the list. Set it equal to the head of the list.
             Node<T> currentNode = this.head;
 
@@ -116,8 +176,10 @@ public class MyLinkedList<T> {
             }
 
             // Return the data at the current Node.
-            return currentNode.data;
+            return currentNode;
         }
+        System.out.println("Index Out of Bounds!");
+        return null;
     }
 
     /**
@@ -177,11 +239,11 @@ public class MyLinkedList<T> {
             // Add the element to the front of the list
             AddFront(element);
         // Else if the index is equal to the size of the list
-        } else if (index == size || index == -1) {
+        } else if (index == this.size - 1 || index == -1) {
             // Append the element to the end of the list
             Append(element);
         // Else
-        } else {
+        } else if (-this.size <= index && index < this.size) {
             // Identify if indexing using positive or negative indices.
             if (index < 0) {
                 // Create a new node that points to a position in the list. Set it equal to the tail of the list.
@@ -193,7 +255,7 @@ public class MyLinkedList<T> {
                     currentNode = currentNode.previous;
                 }
 
-                // Create the new node with its next being the current's next and its previous being the current.
+                // Create the new node with its next being the current's next and its previous being the currents previous.
                 Node<T> newNode = new Node<T>(element, currentNode.next, currentNode);
                 // Set the next node's previous to the new node.
                 newNode.next.previous = newNode;
@@ -218,6 +280,8 @@ public class MyLinkedList<T> {
             }
             // Increment the size
             size++;
+        } else {
+            System.out.println("Index Out of Bounds");
         }
     }
 
@@ -225,8 +289,17 @@ public class MyLinkedList<T> {
      * Delete the first object in the list
      */
     public void DeleteFront() {
-        // Set the head equal to head to the next element.
-        this.head = this.head.next;
+        // If there is only one element
+        if (this.size < 2) {
+            // null the list
+            this.head = this.tail = null;
+        // Else list is not empty
+        } else {
+            // Set the head equal to head to the next element.
+            this.head = this.head.next;
+            // Set the new head's previous node to null
+            this.head.previous = null;
+        }
         // Decrement the size
         size--;
     }
@@ -235,42 +308,119 @@ public class MyLinkedList<T> {
      * Delete the last object in the list
      */
     public void DeleteBack() {
-        // If the the head does not have a next
-        if (this.head.next == null) {
-            // Delete the Front.
-            DeleteFront();
+        // If there is only one element
+        if (this.size < 2) {
+            // null the list
+            this.head = this.tail = null;
+        // Else list is not empty
         } else {
             // Set the tail equal to the previous node
             this.tail = tail.previous;
             // Set the next node to null
             this.tail.next = null;
-            // Decrement the size;
-            size--;
+        }
+        // Decrement the size;
+        size--;
+    }
+
+    /**
+     * Delete an element based on its value
+     * @param element Value to be deleted from linked list
+     */
+    public void DeleteNodeBasedOnValue(T element) {
+        // If list is empty
+        if (this.head == null) {
+            // Print the list is empty
+            System.out.println("List is empty");
+            // Return
+            return;
+        }
+        // If the element is the first node.
+        if (this.head.data == element) {
+            // Delete from the front of the list
+            DeleteFront();
+        // Else if the element is the last in the list
+        } else if (this.tail.data == element) {
+            // Delete from the back of the list
+            DeleteBack();
+        // Else
+        } else {
+            // Create a new node that points to a position in the list. Set it equal to the head of the list.
+            Node<T> currentNode = this.head;
+
+            // Move through the list until the element is found
+            while (currentNode != null) {
+                if (currentNode.data == element) {
+                    // Set the previous node's next to the next node.
+                    currentNode.previous.next = currentNode.next;
+                    // Set the next nodes previous to the previous node.
+                    currentNode.next.previous = currentNode.previous;
+                    // Decrement the size
+                    size--;
+                    // Return;
+                    return;
+                } else {
+                    // Set the current node to the next.
+                    currentNode = currentNode.next;
+                }
+            }
+
+            // If while loop exits, element is not in list
+            System.out.println("Element Not in List");
+            return;
         }
     }
 
-    public void DeleteNodeBasedOnValue(T element) {
-        
-        Node<T> currentNode = head;
-        
-        if (currentNode.data == element) {
+        /**
+     * Delete an element based on its value
+     * @param element Value to be deleted from linked list
+     */
+    public void Remove(int index) {
+        // If the element is the first node.
+        if (index == 0 || index == -size) {
+            // Delete from the front of the list
             DeleteFront();
-        } else if (currentNode.next == null) {
-            System.out.println("Value not found!");
-            return;
-        } else {
-            while (currentNode.next.data != element) {
-                currentNode = currentNode.next;
-                if (currentNode.next == null) {
-                    System.out.println("Value not found!");
-                    return;
+        // Else if the element is the last in the list
+        } else if (index == size -1 || index == -1) {
+            // Delete from the back of the list
+            DeleteBack();
+        // Else
+        } else if (-this.size <= index && index < this.size) {
+            // Identify if indexing using positive or negative indices.
+            if (index < 0) {
+                // Create a new node that points to a position in the list. Set it equal to the tail of the list.
+                Node<T> currentNode = this.tail;
+
+                // Iterate through the linked list the number of times of the index to get.
+                for (int i = -1; i > index; i--) {
+                    // Advance the pointer to the location of the next node in the list
+                    currentNode = currentNode.previous;
                 }
+
+                // Set the previous node's next to the next node.
+                currentNode.previous.next = currentNode.next;
+                // Set the next nodes previous to the previous node.
+                currentNode.next.previous = currentNode.previous;
+            } else {
+                // Create a new node that points to a position in the list. Set it equal to the head of the list.
+                Node<T> currentNode = this.head;
+
+                // Iterate through the linked list the number of times of the index to get.
+                for (int i = 0; i < index; i++) {
+                    // Advance the pointer to the location of the next node in the list
+                    currentNode = currentNode.next;
+                }
+
+                // Set the previous node's next to the next node.
+                currentNode.previous.next = currentNode.next;
+                // Set the next nodes previous to the previous node.
+                currentNode.next.previous = currentNode.previous;
             }
-            currentNode.next = currentNode.next.next;
-            if (currentNode.next == null) {
-                this.tail = currentNode;
-            }
+            // Decrement the size
             size--;
+        } else {
+            System.out.println("Index Out of Bounds");
+            return;
         }
     }
 
