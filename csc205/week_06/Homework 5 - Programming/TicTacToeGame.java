@@ -75,6 +75,9 @@ public class TicTacToeGame extends MyJFrame {
         setContentPane(this.jPanel);
     }
 
+    /**
+     * Creates the top menu bar
+     */
     public void CreateTopMenuBar() {
         // Create a new JMenu
         JMenu menu = new JMenu("Game Options");
@@ -88,110 +91,160 @@ public class TicTacToeGame extends MyJFrame {
         menuBar.add(menu);
     }
 
+    /**
+     * Method to reset the game
+     */
     public void ResetGame() {
+        // Set the current playre to X
         currentPlayer = "X";
+        // Change the current players color back to red
         currentPlayerColor = Color.RED;
 
+        // loop through the array that contains the buttons
         for (int i = 0; i < buttons.size(); i++) {
+            // get the btn and stor it in a variable called btn
             JButton btn = buttons.get(i);
+            // Set its text back to empty
             btn.setText("");
+            // Set its background to the default null
             btn.setBackground(null);
+            // Re enable the button
             btn.setEnabled(true);
         }
 
+        // Reset the turn count to one.
         turn = 1;
     }
 
+    /**
+     * Method to handle button clicks
+     */
     public void ButtonClicked(ActionEvent e) {
 
+        // store the clicked button in a JButton variable
         JButton btnClicked = (JButton)(e.getSource());
 
+        // set the buttons text to the player that clicked it
         btnClicked.setText(currentPlayer);
+        // Set the button's color to the player that clicked it
         btnClicked.setBackground(currentPlayerColor);
+        // Set the button to disabled so it can't be clicked again.
         btnClicked.setEnabled(false);
 
+        // Check if a winner was found.
         CheckWinner();
-
+        // Switch to the other player.
         SwitchPlayer();
-
+        // Increment the turn
         turn++;
     }
 
+    /**
+     * Method to switch players
+     */
     public void SwitchPlayer() {
+        // if the current player is x
         if (currentPlayer == "X") {
+            // set the current player to o
             currentPlayer = "O";
+            // change the color to blue
             currentPlayerColor = Color.BLUE;
+        // Else the current player is o
         } else {
+            // set the current player to x
             currentPlayer = "X";
+            // change the color to red
             currentPlayerColor = Color.RED;
         }
     }
 
+    /**
+     * Method to check if there is a winner
+     */
     public void CheckWinner() {
+        // Create a boolean to hold if a winner was found
         boolean winnerFound;
 
         if (
+            // Check if all top row equals the current player
             buttons.get(0).getText().equals(currentPlayer) &&
             buttons.get(1).getText().equals(currentPlayer) &&
             buttons.get(2).getText().equals(currentPlayer)) {
                 winnerFound = true;
         } else if (
+            // Check if all middle row equals the current player
             buttons.get(3).getText().equals(currentPlayer) &&
             buttons.get(4).getText().equals(currentPlayer) &&
             buttons.get(5).getText().equals(currentPlayer)) {
                 winnerFound = true;
         } else if (
+            // Check if all bottom row equals the current player
             buttons.get(6).getText().equals(currentPlayer) &&
             buttons.get(7).getText().equals(currentPlayer) &&
             buttons.get(8).getText().equals(currentPlayer)){
                 winnerFound = true;
         } else if (
+            // Check if all left diagonal equals the current player
             buttons.get(0).getText().equals(currentPlayer) &&
             buttons.get(4).getText().equals(currentPlayer) &&
             buttons.get(8).getText().equals(currentPlayer)){
                 winnerFound = true;
         } else if (
+            // Check if all right diagonal equals the current player
             buttons.get(2).getText().equals(currentPlayer) &&
             buttons.get(4).getText().equals(currentPlayer) &&
             buttons.get(6).getText().equals(currentPlayer)){
                 winnerFound = true;
         } else if (
+            // Check if all first column equals the current player
             buttons.get(0).getText().equals(currentPlayer) &&
             buttons.get(3).getText().equals(currentPlayer) &&
             buttons.get(6).getText().equals(currentPlayer)){
                 winnerFound = true;
         } else if (
+            // Check if all second column equals the current player
             buttons.get(1).getText().equals(currentPlayer) &&
             buttons.get(4).getText().equals(currentPlayer) &&
             buttons.get(7).getText().equals(currentPlayer)){
                 winnerFound = true;
         } else if (
+            // Check if all third column equals the current player
             buttons.get(2).getText().equals(currentPlayer) &&
             buttons.get(5).getText().equals(currentPlayer) &&
             buttons.get(8).getText().equals(currentPlayer)){
                 winnerFound = true;
         } else {
+            // if none are true there is no winner
             winnerFound = false;
         }
 
-        if (winnerFound) {
-            JOptionPane.showMessageDialog(null, currentPlayer + " has won the game!");
-
-            if (currentPlayer.equals("X")) {
-                xWins++;
+        // if it is turn 9 or there is a winner
+        if (turn == 9 || winnerFound) {
+            // loop through the array of buttons
+            for (int i = 0; i < buttons.size(); i++) {
+                // Disable them all
+                buttons.get(i).setEnabled(false);
+            }
+            // if a winner was found
+            if (winnerFound) {
+                // display the winner in a dialogue box
+                JOptionPane.showMessageDialog(null, currentPlayer + " has won the game!");
+                // If the current player is x
+                if (currentPlayer.equals("X")) {
+                    // Add a win
+                    xWins++;
+                // else current player is o
+                } else {
+                    // Add a win
+                    oWins++;
+                }
+            // if a winner was not found
             } else {
-                oWins++;
+                // Display tie game in a dialog box
+                JOptionPane.showMessageDialog(null, "Tie game!");
             }
-
-            for (int i = 0; i < buttons.size(); i++) {
-                buttons.get(i).setEnabled(false);
-            }
-        } else if (turn == 9) {
-            JOptionPane.showMessageDialog(null, "Tie game!");
-
-            for (int i = 0; i < buttons.size(); i++) {
-                buttons.get(i).setEnabled(false);
-            }
+            // After boxes are closed, display how many wins each player has
+            JOptionPane.showMessageDialog(null, "X Wins: " + xWins + "\nO Wins: " + oWins);
         }
     }
 }
